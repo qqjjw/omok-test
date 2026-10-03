@@ -1,3 +1,4 @@
+const DEFAULT_SERVER = 'https://omok-test.onrender.com';
 const size = 15;
 const boardElement = document.querySelector('#board');
 const status = document.querySelector('#status');
@@ -96,8 +97,7 @@ shareButton.addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(url.href);notice.textContent='초대 링크를 복사했습니다.';}catch{window.prompt('이 링크를 복사해 친구에게 보내세요.',url.href);}
 });
 render();
-let saved='';try{saved=localStorage.getItem('omok-server') || '';}catch{}
 const configured=new URL(location.href).searchParams.get('server');
 if(configured)start(configured);
 else if(location.hostname.endsWith('.onrender.com') || ['localhost','127.0.0.1'].includes(location.hostname))start(location.origin);
-else if(saved)start(saved);
+else start(DEFAULT_SERVER);

@@ -52,10 +52,10 @@ Render에 GitHub를 연결하고 `qqjjw/omok-test` 저장소 접근을 허용하
 
 1. 저장소 **Settings → Pages → Build and deployment**에서 **Deploy from a branch**, `main`, `/(root)`를 선택하고 저장합니다.
 2. `https://qqjjw.github.io/omok-test/`를 엽니다.
-3. **Render 서버 주소** 칸에 `https://서비스이름.onrender.com`을 입력하고 **연결하기**를 누릅니다.
+3. 기본 서버 `https://omok-test.onrender.com`에 자동 연결됩니다. 다른 서버를 사용하려면 주소를 입력하고 **연결하기**를 누릅니다.
 4. **초대 링크 복사**를 눌러 친구에게 전달합니다. 링크에 서버 주소가 포함되어 친구가 별도로 설정할 필요가 없습니다.
 
-서버 주소는 현재 브라우저에도 저장됩니다. GitHub Pages에서는 HTTPS/WSS 주소를 사용해야 합니다.
+기본 서버 주소는 `app.js`의 `DEFAULT_SERVER`에 지정되어 있습니다. 초대 링크의 `server` 파라미터로 다른 서버를 지정할 수도 있습니다. GitHub Pages에서는 HTTPS/WSS 주소를 사용해야 합니다.
 
 ## 로컬 실행·검증
 
