@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: omok-test
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci --prefix server
+    startCommand: npm start --prefix server
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: ALLOWED_ORIGINS
+        value: https://qqjjw.github.io

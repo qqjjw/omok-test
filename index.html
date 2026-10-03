@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ed">
+  <title>함께 두는 바둑판</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">TWO PEOPLE, ONE BOARD</p><h1>함께 두는 바둑판<span>.</span></h1><p class="intro">차례도, 승패도 없이. 원하는 돌을 골라 자유롭게 놓아보세요.</p></header>
+    <section class="connection" aria-label="서버 연결">
+      <div class="connection-row"><span id="status" role="status">연결 대기</span><span id="players">0 / 2명</span></div>
+      <form id="connect-form"><label for="server-url">Render 서버 주소</label><div class="input-row"><input id="server-url" type="url" placeholder="https://omok-test.onrender.com" required autocomplete="url"><button type="submit" class="connect-button">연결하기</button></div></form>
+      <div class="share-row"><button id="share" disabled>초대 링크 복사</button><small>같은 링크로 최대 두 명이 함께 사용할 수 있어요.</small></div>
+    </section>
+    <section class="play-area" aria-label="바둑판">
+      <div class="toolbar" aria-label="돌 선택"><button data-mode="black" aria-pressed="true"><span class="stone-icon black"></span>흑돌</button><button data-mode="white" aria-pressed="false"><span class="stone-icon white"></span>백돌</button><button data-mode="remove" aria-pressed="false">↶ 돌 삭제</button><span id="mode-label">흑돌 놓기</span></div>
+      <div class="board-frame"><div id="board" role="group" aria-label="15 곱하기 15 바둑판"></div></div>
+      <p id="notice" role="status">서버에 연결하면 돌을 놓을 수 있습니다.</p>
+    </section>
+    <footer><span>흑돌과 백돌은 누구나 선택할 수 있습니다.</span><span>서버가 재시작되면 판이 초기화됩니다.</span></footer>
+  </main>
+</body>
+</html>
